@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <nulash_cmsblog_adminhtml_record_index>
+        <reference name="content">
+            <block type="nulash_cmsblog/adminhtml_record" name="record" />
+        </reference>
+    </nulash_cmsblog_adminhtml_record_index>
+
+    <nulash_cmsblog_adminhtml_record_edit>
+        <reference name="content">
+            <block type="nulash_cmsblog/adminhtml_record_edit" name="record_edit">
+                <block type="nulash_cmsblog/adminhtml_record_edit_form" name="record_edit_form" />
+            </block>
+        </reference>
+    </nulash_cmsblog_adminhtml_record_edit>
+
+    <nulash_cmsblog_adminhtml_record_new>
+        <update handle="nulash_cmsblog_adminhtml_record_edit" />
+    </nulash_cmsblog_adminhtml_record_new>
+</layout>
