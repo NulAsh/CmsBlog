@@ -1,0 +1,3 @@
+code                app/code/local/NulAsh/CmsBlog/
+adminhtml/layout/*  app/design/adminhtml/default/default/layout/
+NulAsh_CmsBlog.xml  app/etc/modules/NulAsh_CmsBlog.xml
