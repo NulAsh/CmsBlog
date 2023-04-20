@@ -9,7 +9,7 @@
                     <children>
                         <records>
                             <title>Manage Records</title>
-                            <action>adminhtml/record</action>
+                            <action>adminhtml/nulash_cmsblog_record</action>
                         </records>
                     </children>
                 </blog>

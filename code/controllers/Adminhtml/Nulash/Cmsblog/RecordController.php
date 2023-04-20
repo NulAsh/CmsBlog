@@ -1,11 +1,12 @@
 <?php
-class NulAsh_CmsBlog_Adminhtml_RecordController extends Mage_Adminhtml_Controller_Action
+class NulAsh_CmsBlog_Adminhtml_Nulash_Cmsblog_RecordController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
         $this->loadLayout();
-        $this->_setActiveMenu('cmsblog/records');
-        $this->_addBreadcrumb($this->__('CMS Blog'), $this->__('CMS Blog'));
+        $this->_setActiveMenu('cms/blog/records');
+        $this->_addBreadcrumb($this->__('CMS'), $this->__('CMS'));
+        $this->_addBreadcrumb($this->__('Blog'), $this->__('Blog'));
         $this->_addBreadcrumb($this->__('Manage Records'), $this->__('Manage Records'));
         $this->_addContent($this->getLayout()->createBlock('cmsblog/adminhtml_record'));
         $this->renderLayout();
@@ -25,8 +26,9 @@ class NulAsh_CmsBlog_Adminhtml_RecordController extends Mage_Adminhtml_Controlle
             Mage::register('record_data', $model);
 
             $this->loadLayout();
-            $this->_setActiveMenu('cmsblog/records');
-            $this->_addBreadcrumb($this->__('CMS Blog'), $this->__('CMS Blog'));
+            $this->_setActiveMenu('cms/blog/records');
+            $this->_addBreadcrumb($this->__('CMS'), $this->__('CMS'));
+            $this->_addBreadcrumb($this->__('Blog'), $this->__('Blog'));
             $this->_addBreadcrumb($this->__('Manage Records'), $this->__('Manage Records'));
 
             $this->_addContent($this->getLayout()->createBlock('cmsblog/adminhtml_record_edit'));
