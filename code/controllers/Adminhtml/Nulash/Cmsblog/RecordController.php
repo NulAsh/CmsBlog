@@ -77,4 +77,25 @@ class NulAsh_CmsBlog_Adminhtml_Nulash_Cmsblog_RecordController extends Mage_Admi
     {
         return Mage::getSingleton('admin/session')->isAllowed('cmsblog/records');
     }
+
+    public function massDeleteAction()
+    {
+        $recordIds = $this->getRequest()->getParam('record_ids');
+        if (!is_array($recordIds)) {
+            Mage::getSingleton('adminhtml/session')->addError($this->__('Please select records to delete.'));
+        } else {
+            try {
+                $recordModel = Mage::getModel('cmsblog/record');
+                foreach ($recordIds as $recordId) {
+                    $recordModel->load($recordId)->delete();
+                }
+                Mage::getSingleton('adminhtml/session')->addSuccess(
+                    $this->__('Total of %d record(s) were successfully deleted.', count($recordIds))
+                );
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
 }

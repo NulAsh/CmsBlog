@@ -100,4 +100,18 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Grid extends Mage_Adminhtml_Block_Wi
     {
         return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
+
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('id');
+        $this->getMassactionBlock()->setFormFieldName('record_ids');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label'    => $this->__('Delete'),
+            'url'      => $this->getUrl('*/*/massDelete'),
+            'confirm'  => $this->__('Are you sure you want to delete the selected records?')
+        ));
+
+        return $this;
+    }
 }
