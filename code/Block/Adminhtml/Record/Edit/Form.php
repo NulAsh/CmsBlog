@@ -20,11 +20,12 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Edit_Form extends Mage_Adminhtml_Blo
             'required' => true,
             'name' => 'title',
         ));
-        $fieldset->addField('store_id', 'text', array(
-            'label' => $this->__('Store ID'),
+        $fieldset->addField('store_id', 'select', array(
+            'label' => $this->__('Store View'),
             'class' => 'required-entry',
             'required' => true,
             'name' => 'store_id',
+            'values' => Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(),
         ));
 
         $fieldset->addField('content', 'textarea', array(
