@@ -98,4 +98,12 @@ class NulAsh_CmsBlog_Adminhtml_Nulash_Cmsblog_RecordController extends Mage_Admi
         }
         $this->_redirect('*/*/index');
     }
+
+    public function gridAction()
+    {
+        $this->loadLayout();
+        $this->getResponse()->setBody(
+            $this->getLayout()->createBlock('cmsblog/adminhtml_record_grid')->toHtml()
+        );
+    }
 }

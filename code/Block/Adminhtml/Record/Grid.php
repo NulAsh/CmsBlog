@@ -8,6 +8,7 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Grid extends Mage_Adminhtml_Block_Wi
         $this->setDefaultSort('id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
+        $this->setUseAjax(true);
     }
 
     protected function _prepareCollection()
@@ -113,5 +114,10 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Grid extends Mage_Adminhtml_Block_Wi
         ));
 
         return $this;
+    }
+
+    public function getGridUrl()
+    {
+        return $this->getUrl('*/*/grid', array('_current' => true));
     }
 }
