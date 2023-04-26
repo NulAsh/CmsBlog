@@ -50,24 +50,6 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Edit_Form extends Mage_Adminhtml_Blo
             ),
         ));
 
-        $fieldset->addField('date_created', 'date', array(
-            'label' => $this->__('Date Created'),
-            'class' => 'required-entry',
-            'required' => true,
-            'name' => 'date_created',
-            'image' => $this->getSkinUrl('images/grid-cal.gif'),
-            'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-        ));
-
-        $fieldset->addField('date_modified', 'date', array(
-            'label' => $this->__('Date Modified'),
-            'class' => 'required-entry',
-            'required' => true,
-            'name' => 'date_modified',
-            'image' => $this->getSkinUrl('images/grid-cal.gif'),
-            'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-        ));
-
         if (Mage::getSingleton('adminhtml/session')->getRecordData()) {
             $form->setValues(Mage::getSingleton('adminhtml/session')->getRecordData());
             Mage::getSingleton('adminhtml/session')->setRecordData(null);
