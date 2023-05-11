@@ -35,6 +35,13 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Edit_Form extends Mage_Adminhtml_Blo
             'name' => 'content',
         ));
 
+        $fieldset->addField('url_key', 'text', array(
+            'label' => $this->__('URL Key'),
+            'class' => 'required-entry',
+            'required' => true,
+            'name' => 'url_key',
+        ));
+
         $fieldset->addField('is_active', 'select', array(
             'label' => $this->__('Is Active'),
             'name' => 'is_active',

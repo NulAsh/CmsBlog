@@ -1,0 +1,10 @@
+<?php
+/** @var NulAsh_CmsBlog_Block_View $this */
+$record = $this->getRecord();
+?>
+<div class="cmsblog-record">
+    <h1><?php echo $this->escapeHtml($record->getTitle()); ?></h1>
+    <div class="cmsblog-content">
+        <?php echo $record->getContent(); ?>
+    </div>
+</div>

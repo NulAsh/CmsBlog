@@ -16,6 +16,18 @@ class NulAsh_CmsBlog_Model_Record extends Mage_Core_Model_Abstract
         }
         $this->setData('date_modified', $date);
 
+        // Process URL key
+        $urlKey = $this->getData('url_key');
+        $urlKey = preg_replace('/[^a-zA-Z0-9_-]+/', '-', $urlKey);
+        $urlKey = strtolower(trim($urlKey, '-'));
+        $this->setData('url_key', $urlKey);
+
+        return $this;
+    }
+
+    public function loadByUrlKey($urlKey)
+    {
+        $this->_getResource()->loadByUrlKey($this, $urlKey);
         return $this;
     }
 }

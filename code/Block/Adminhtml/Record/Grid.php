@@ -45,6 +45,12 @@ class NulAsh_CmsBlog_Block_Adminhtml_Record_Grid extends Mage_Adminhtml_Block_Wi
             'index'  => 'content',
         ));
 
+        $this->addColumn('url_key', array(
+            'header' => $this->__('URL Key'),
+            'align'  => 'left',
+            'index'  => 'url_key',
+        ));
+
         $this->addColumn('is_active', array(
             'header' => $this->__('Is Active'),
             'align'  => 'left',

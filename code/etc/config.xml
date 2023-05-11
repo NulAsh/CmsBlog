@@ -2,7 +2,7 @@
 <config>
     <modules>
         <NulAsh_CmsBlog>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </NulAsh_CmsBlog>
     </modules>
     <global>
@@ -20,6 +20,17 @@
                 </entities>
             </cmsblog_resource>
         </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <nulash_cmsblog>
+                        <class>NulAsh_CmsBlog_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                        <type>singleton</type>
+                    </nulash_cmsblog>
+                </observers>
+            </controller_front_init_routers>
+        </events>
         <resources>
             <cmsblog_setup>
                 <setup>
@@ -59,4 +70,22 @@
             </updates>
         </layout>
     </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <cmsblog>
+                    <file>cmsblog.xml</file>
+                </cmsblog>
+            </updates>
+        </layout>
+        <routers>
+            <cmsblog>
+                <use>standard</use>
+                <args>
+                    <module>NulAsh_CmsBlog</module>
+                    <frontName>cmsblog</frontName>
+                </args>
+            </cmsblog>
+        </routers>
+    </frontend>
 </config>
