@@ -9,6 +9,9 @@ class NulAsh_CmsBlog_Block_View extends Mage_Core_Block_Template
 
     public function getRecord()
     {
-        return $this->_getData('record');
+        if (!$this->hasData('record')) {
+            $this->setData('record', Mage::registry('nulash_cmsblog_current_record'));
+        }
+        return $this->getData('record');
     }
 }
